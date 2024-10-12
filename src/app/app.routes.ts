@@ -3,8 +3,8 @@ import { AboutUsComponent, CategoryComponent, ContactUsComponent, HomeComponent,
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: 'category', component: CategoryComponent },
-    { path: 'post', component: PostComponent },
+    { path: 'category/:category', component: CategoryComponent },
+    { path: 'post/:id', component: PostComponent },
     { path: 'about', component: AboutUsComponent },
     { path: 'contact', component: ContactUsComponent },
 ];

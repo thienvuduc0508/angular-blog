@@ -1,24 +1,30 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-9">
-            <div class="card shadow-effect">
-                <img src="https://images.pexels.com/photos/28217963/pexels-photo-28217963.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="" />
-                <div class="card-body">
-                    <small class="bg-light text-danger text-center">Design</small>
-                    <small class="bg-light text-success text-center ml-2">Design</small>
-                    <small class="bg-light text-info text-center ml-2">Design</small>
-                    <small class="bg-light text-warning text-center ml-2">Design</small>
-                    <h1 class="mt-3 mb-3">HOW TO START BLOG</h1>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis aperiam amet quo corporis cupiditate quam repellat harum, qui, deserunt omnis pariatur sint inventore delectus cumque praesentium adipisci velit suscipit cum?</p>
+@if(postDetail){
+    <div class="container" >
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card shadow-effect">
+                    <img [src]="postDetail.postImgPath" alt="" class="card-img-top img-fluid" />
+                    <div class="card-body">
+                        <small class="bg-light text-danger text-center">{{postDetail.category.category}}</small>
+                        @if (postDetail.isFeatured) {
+                            <small class="bg-light text-success text-center ml-2">Featured</small>
+                        }
+                        <small class="bg-light text-info text-center ml-2">Views - {{postDetail.views}}</small>
+                        <small class="bg-light text-warning text-center ml-2">LAST UPDATED - {{convertDate(postDetail.createAt) | date}}</small>
+                        <h1 class="mt-3 mb-3">{{postDetail.title}}</h1>
+                        <p [innerHTML]="postDetail.content"></p>
+                    </div>
                 </div>
+                <app-comment-form></app-comment-form>
+                <app-comment-list></app-comment-list>
             </div>
-            <app-comment-form></app-comment-form>
-            <app-comment-list></app-comment-list>
-        </div>
-        <div class="col-md-3">
-            <app-post-card></app-post-card>
-            <app-post-card></app-post-card>
-            <app-post-card></app-post-card>
+            <div class="col-md-3">
+                @for (similarPost of similarPosts; track $index) {
+                    <div class="mb-5">
+                        <app-post-card [postData]="similarPost"></app-post-card>
+                    </div>
+                }
+            </div>
         </div>
     </div>
-</div>
+}

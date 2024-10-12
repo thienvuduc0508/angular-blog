@@ -1,1 +1,19 @@
-<p>category works!</p>
+<div class="bg-theme p-5">
+    <div class="container">
+        <h1 class="text-white text-center">{{title}}</h1>
+    </div>
+</div>
+
+@if (postList.length) {
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            @for (post of postList; track $index) {
+            <div class="col-md-4 mb-3">
+                <app-post-card [postData]="post"></app-post-card>
+            </div>
+            }
+        </div>
+    </div>
+} @else {
+    <h5 class="text-center mt-5">No data</h5>
+}

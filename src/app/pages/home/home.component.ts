@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PostCardComponent } from "../../layouts/post-card/post-card.component";
+import { PostsService } from '../../services/posts.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,5 +11,17 @@ import { PostCardComponent } from "../../layouts/post-card/post-card.component";
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  featuredPostList: any;
+  latestPostList: any;
+  postService: any = inject(PostsService);
+  ngOnInit() {
+    this.postService.loadData().subscribe((val: any) => {
+      this.featuredPostList = val;
+    })
 
+    this.postService.loadLatest().subscribe((val: any) => {
+      this.latestPostList = val;
+    })
+
+  }
 }

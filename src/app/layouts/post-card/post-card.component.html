@@ -1,11 +1,19 @@
-<div class="card">
-    <img src="https://images.pexels.com/photos/27241058/pexels-photo-27241058/free-photo-of-chim-canh-d-ng-m-ch-p-nh-d-ng-v-t-hoang-da.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load" alt="card" />
-    <div class="card-body">
-        <small class="bg-light text-danger text-center">Design</small>
-        <small class="bg-light text-success text-center ml-3">Featured</small>
-        <small class="bg-light text-info text-center ml-3">Views - 100,256</small>
-        <h5 class="mt-1">HOW TO START</h5>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae, sapiente accusantium iure dicta fuga dolore voluptatem. Nostrum dolorum illo eveniet dolore error laboriosam beatae reiciendis. Reprehenderit veniam fuga eligendi laudantium.</p>
-        <small class="bg-light text-warning text-center">LAST UPDATED - SEP 20, 2021</small>
+@if (postData) {
+    <div  class="card" [routerLink]="['/post', postData.id]">
+        <img [src]="postData.postImgPath" alt="card" class="card-img-top" />
+        <div class="card-body">
+            <small class="bg-light text-danger text-center">{{postData.category.category}}</small>
+            @if(postData.isFeatured) {
+                <small  class="bg-light text-success text-center ml-3">Featured</small>
+            }
+            <small class="bg-light text-info text-center ml-3">Views - {{postData.views}}</small>
+            <h5 class="post-title mt-1">{{postData.title}}</h5>
+            <div class="post-excerpt">
+                <p>{{postData.excerpt}}</p>
+            </div>
+            <div>
+                <small class="bg-light text-warning text-center">LAST UPDATED - {{convertDate(postData.createAt) | date}}</small>
+            </div>
+        </div>
     </div>
-</div>
+}
