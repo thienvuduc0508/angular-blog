@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { PostCardComponent } from "../../layouts/post-card/post-card.component";
 import { PostsService } from '../../services/posts.service';
 import { take } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [PostCardComponent],
+  imports: [TranslateModule, PostCardComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
