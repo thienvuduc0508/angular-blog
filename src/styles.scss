@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Roboto';
-    src: url(/src/assets/fonts/Roboto-Regular.ttf) format('truetype');
+    src: url(/assets/fonts/Roboto-Regular.ttf) format('truetype');
 }
 
 :root {
@@ -10,20 +10,24 @@
     --bg-nav-color: #f9f9f9;
 }
 
-html, body {
+html,
+body {
     font-family: "Roboto", sans-serif !important;
     font-size: 12px;
     color: var(--text-color);
 }
-
+ul, li {
+    list-style: none;
+    margin: 0 !important;
+}
 
 .site-logo {
-    padding: 5px 20px;
-    border-radius: 20px;
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
-    font-size: 1.5em;
-    text-decoration: none;
+    display: block;
+    width: 100px;
+
+    img {
+        width: 100%;
+    }
 }
 
 .nav-link {
@@ -38,14 +42,17 @@ html, body {
 .bg-theme {
     background-color: var(--primary-color);
 }
+
 .bg-secondary-theme {
     background-color: var(--secondary-color);
 }
+
 .text-theme-primary {
     color: var(--primary-color);
 }
 
-input[type=text], input[type=email] {
+input[type=text],
+input[type=email] {
     height: 60px;
     padding-left: 20px;
     font-size: 13px;
@@ -57,4 +64,101 @@ input[type=text], input[type=email] {
     border: none;
     font-size: 13px;
     background-color: var(--primary-color);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.navbar, .navbar .container {
+    flex-wrap: unset !important;
+}
+
+
+.sk-spinner-wave.sk-spinner {
+    margin: 0 auto;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    font-size: 10px;
+}
+
+.sk-spinner-wave div {
+    background-color: #1ab394;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    -webkit-animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+    animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+}
+
+.sk-spinner-wave .sk-rect2 {
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.1s;
+}
+
+.sk-spinner-wave .sk-rect3 {
+    -webkit-animation-delay: -1s;
+    animation-delay: -1s;
+}
+
+.sk-spinner-wave .sk-rect4 {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+}
+
+.sk-spinner-wave .sk-rect5 {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-waveStretchDelay {
+
+    0%,
+    40%,
+    100% {
+        -webkit-transform: scaleY(0.4);
+        transform: scaleY(0.4);
+    }
+
+    20% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
+}
+
+@keyframes sk-waveStretchDelay {
+
+    0%,
+    40%,
+    100% {
+        -webkit-transform: scaleY(0.4);
+        transform: scaleY(0.4);
+    }
+
+    20% {
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+    }
 }

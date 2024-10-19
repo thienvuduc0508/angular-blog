@@ -1,0 +1,11 @@
+{
+    "COMMON": {
+        "Retry": "Thử lại",
+        "GeneralError": "Đã xảy ra lỗi, vui lòng thử lại"
+    },
+    "Featured": "Nổi bật",
+    "FeaturedPost": "Bài viết nổi bật",
+    "FeaturedPostSub": "Danh sách bài viết nổi bật trong tháng",
+    "LatestPost": "Mới cập nhật",
+    "LatestPostSub": "Danh sách bài viết mới nhất"
+}

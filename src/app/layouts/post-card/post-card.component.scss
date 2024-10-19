@@ -1,9 +1,6 @@
 .card {
-    max-width: 400px;
-    min-width: 300px;
     border: none;
     box-shadow: 0px 0px 33px -10px rgba(71, 114, 254, 0.3);
-    height: 500px;
     cursor: pointer;
 }
 
@@ -14,7 +11,14 @@
 
 .post-excerpt {
     width: 100%;
-    max-height: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    p {
+        height: 100px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+@media (min-width: 768px) {
+    
 }

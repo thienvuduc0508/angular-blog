@@ -1,0 +1,11 @@
+{
+    "COMMON": {
+        "Retry": "Retry",
+        "GeneralError": "Error occured, please try again"
+    },
+    "Featured": "Featured",
+    "FeaturedPost": "Featured Posts",
+    "FeaturedPostSub": "List of outstanding articles this month",
+    "LatestPost": "Latest Posts",
+    "LatestPostSub": "List of the latest articles"
+}
